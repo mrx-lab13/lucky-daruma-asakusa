@@ -47,18 +47,13 @@
       "currenciesAccepted": "JPY",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "The Room Asakusa 4F, 1-16-11 Asakusa",
-        "addressLocality": "Taito City",
-        "addressRegion": "Tokyo",
+        "streetAddress": "浅草2-6-14 公園六区ビル4F",
+        "addressLocality": "台東区",
+        "addressRegion": "東京都",
         "postalCode": "111-0032",
         "addressCountry": "JP"
       },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 35.7144608,
-        "longitude": 139.79375
-      },
-      "hasMap": "https://www.google.com/maps/place/LUCKY+DARUMA+ASAKUSA/@35.7144608,139.79375,17z/",
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=東京都台東区浅草2-6-14+公園六区ビル4F",
       "knowsLanguage": ["ja", "en"],
       "areaServed": "Asakusa, Tokyo",
       "makesOffer": {
@@ -1595,6 +1590,190 @@
     footer{font-size:.86rem;}
     footer .foot-links{line-height:1.6;}
   }
+
+  /* Revised hero message supplied for the inbound landing page. */
+  .hero h1.hero-stair-revised{
+    max-width:none;
+    font-size:clamp(3.5rem,5.55vw,6.3rem);
+    line-height:.86;
+  }
+  .hero-stair-revised .line-write{margin-left:0;}
+  .hero-stair-revised .line-create{margin-top:.22em;margin-left:.45em;}
+  .hero-stair-revised .line-daruma{margin-left:1.42em;}
+  .hero-stair-revised .line-experience{margin-top:.28em;margin-left:.18em;}
+
+  @media (min-width:1600px){
+    .hero h1.hero-stair-revised{max-width:none;font-size:clamp(4.4rem,5.4vw,6.7rem);}
+  }
+
+  @media (max-width:640px){
+    .hero h1.hero-stair-revised{
+      max-width:none;
+      font-size:clamp(2.7rem,12.2vw,3.3rem);
+      line-height:.88;
+    }
+    .hero-stair-revised .line-create{margin-top:.24em;margin-left:.22em;}
+    .hero-stair-revised .line-daruma{margin-left:.82em;}
+    .hero-stair-revised .line-experience{margin-top:.3em;margin-left:0;}
+  }
+
+  /* Editorial stories placed after the kanji-name gift. */
+  .craft-stories{
+    padding-top:110px;
+    padding-bottom:110px;
+    background:var(--paper);
+  }
+  .craft-story{
+    position:relative;
+    display:grid;
+    grid-template-columns:minmax(220px,.72fr) minmax(0,1.28fr);
+    gap:clamp(44px,8vw,120px);
+    padding:74px 0 82px;
+    border-top:1px solid #aca292;
+  }
+  .craft-story:last-child{border-bottom:1px solid #aca292;}
+  .craft-story-media{
+    position:relative;
+    width:100%;
+    margin:clamp(30px,4vw,48px) 0 0;
+    aspect-ratio:3 / 2;
+    overflow:hidden;
+    background:#171614;
+  }
+  .craft-story-media::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg,transparent 66%,rgba(15,14,12,.18));
+    pointer-events:none;
+  }
+  .craft-story-media img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    filter:saturate(.9) contrast(1.03);
+  }
+  .craft-story-calligraphy .craft-story-media img{object-position:50% 54%;}
+  .craft-story-daruma .craft-story-media img{object-position:50% 45%;}
+  .craft-story-heading{position:relative;z-index:1;}
+  .craft-story .eyebrow{margin-bottom:26px;}
+  .craft-story h2{
+    font-family:'Shippori Mincho',serif;
+    font-size:clamp(2.6rem,5vw,5rem);
+    font-weight:600;
+    line-height:1.08;
+    letter-spacing:-.04em;
+  }
+  .craft-story-en{
+    margin-top:24px;
+    max-width:18ch;
+    color:var(--red);
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(1.45rem,2.3vw,2rem);
+    font-weight:600;
+    line-height:1.18;
+  }
+  .craft-story-copy{position:relative;z-index:1;padding-top:52px;}
+  .craft-story-copy h3{
+    margin-bottom:26px;
+    color:var(--ink);
+    font-family:'Shippori Mincho',serif;
+    font-size:clamp(1.55rem,2.6vw,2.35rem);
+    font-weight:600;
+    line-height:1.45;
+  }
+  .craft-story-copy p{
+    max-width:46rem;
+    color:#514b42;
+    font-size:1rem;
+    line-height:2.15;
+  }
+  .craft-story-copy p+p{margin-top:22px;}
+  .craft-story-mark{
+    position:absolute;
+    right:0;
+    bottom:-.08em;
+    color:rgba(169,22,17,.055);
+    font-family:'Yuji Syuku',serif;
+    font-size:clamp(11rem,24vw,22rem);
+    line-height:1;
+    pointer-events:none;
+    user-select:none;
+  }
+  html[lang="en"] .craft-story h2{
+    max-width:12ch;
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(2.8rem,5.2vw,5.3rem);
+    letter-spacing:-.035em;
+  }
+  html[lang="en"] .craft-story-en{max-width:20ch;}
+  html[lang="en"] .craft-story-copy h3{
+    max-width:22ch;
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(1.8rem,3vw,2.6rem);
+    line-height:1.22;
+  }
+
+  @media (max-width:800px){
+    .craft-stories{padding-top:72px;padding-bottom:72px;}
+    .craft-story{grid-template-columns:1fr;gap:10px;padding:58px 0 64px;}
+    .craft-story h2{max-width:9ch;}
+    .craft-story-en{max-width:20ch;}
+    .craft-story-copy{padding-top:22px;}
+    .craft-story-copy h3{max-width:16ch;}
+    .craft-story-mark{font-size:clamp(10rem,55vw,16rem);}
+    .craft-story-media{margin-top:28px;aspect-ratio:3 / 2;}
+    .craft-story-calligraphy .craft-story-media img{object-position:42% 52%;}
+    .craft-story-daruma .craft-story-media img{object-position:54% 48%;}
+  }
+
+  @media (max-width:640px){
+    .craft-stories{padding-left:20px;padding-right:20px;}
+    .craft-story{padding:48px 0 54px;}
+    .craft-story .eyebrow{margin-bottom:20px;}
+    .craft-story h2{font-size:clamp(2.35rem,11vw,3.2rem);line-height:1.18;}
+    .craft-story-en{margin-top:18px;font-size:1.45rem;line-height:1.25;}
+    .craft-story-copy h3{margin-bottom:22px;font-size:clamp(1.15rem,7.2vw,1.55rem);line-height:1.5;}
+    .craft-story-copy p{font-size:.95rem;line-height:2;}
+    html[lang="en"] .craft-story h2{font-size:clamp(2.55rem,12vw,3.5rem);line-height:1.02;}
+    html[lang="en"] .craft-story-copy h3{font-size:1.8rem;line-height:1.2;}
+  }
+
+  /* Keep Japanese display headings on intentional phrase boundaries. */
+  html[lang="ja"] .heading-line{
+    display:block;
+    width:max-content;
+    max-width:100%;
+  }
+  html[lang="ja"] .craft-story-copy h3 .heading-line{
+    max-width:none;
+    white-space:nowrap;
+  }
+  html[lang="ja"] #story .section-head,
+  html[lang="ja"] main > section:nth-of-type(3) .section-head{
+    max-width:940px;
+  }
+  html[lang="ja"] #story .section-head h2,
+  html[lang="ja"] main > section:nth-of-type(3) .section-head h2{
+    max-width:none;
+    font-size:clamp(2.4rem,4.15vw,4.35rem);
+  }
+  html[lang="ja"] .cta-band h2{
+    max-width:none;
+    text-wrap:wrap;
+  }
+
+  @media (max-width:640px){
+    html[lang="ja"] #story .section-head h2,
+    html[lang="ja"] main > section:nth-of-type(3) .section-head h2{
+      font-size:clamp(1.85rem,8.4vw,2.1rem);
+      line-height:1.45;
+    }
+    html[lang="ja"] .cta-band h2{
+      font-size:clamp(1.7rem,7.8vw,2rem);
+      line-height:1.45;
+    }
+  }
 </style>
 <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.1.0/model-viewer.min.js"></script>
 </head>
@@ -1624,7 +1803,7 @@
   <section class="hero" style="padding-top:64px;">
     <div>
       <p class="eyebrow hero-eyebrow">ASAKUSA · TRADITIONAL WISH ART</p>
-      <h1 class="hero-stair" lang="en" aria-label="Paint your daruma. Paint your wish."><span class="hero-line line-paint1">Paint</span><span class="hero-line line-your1">your</span><span class="hero-line line-daruma accent">daruma.</span><span class="hero-line line-paint2">Paint</span><span class="hero-line line-your2">your</span><span class="hero-line line-wish">wish.</span></h1>
+      <h1 class="hero-stair hero-stair-revised" lang="en" aria-label="Write your wish. Create your own Daruma. Experience Japan."><span class="hero-line line-write">Write your wish.</span><span class="hero-line line-create">Create your own</span><span class="hero-line line-daruma accent">Daruma.</span><span class="hero-line line-experience">Experience Japan.</span></h1>
       <p class="hero-jp brush">願いを込めて、目を入れる。</p>
       <p class="hero-sub">浅草にある小さな工房で、書道を学び、自分だけの達磨(だるま)に絵付けをする<span class="nowrap">60分間</span>。左目に願いを込めて筆を入れ、願いが叶ったらもう一つの目をー世界にひとつだけのお守りを手のひらに。</p>
       <div class="hero-ctas">
@@ -1644,7 +1823,7 @@
       <span class="vert-label" aria-hidden="true">浅草だるま工房</span>
       <div class="section-head">
         <p class="eyebrow">SINCE EDO PERIOD</p>
-        <h2>だるまは、ただの置物じゃない。</h2>
+        <h2><span class="heading-line">だるまは、</span><span class="heading-line">ただの置物じゃない。</span></h2>
         <p>七転び八起き——何度倒れても起き上がる姿から、江戸時代より「願掛け」の縁起物として親しまれてきました。目を入れる瞬間、だるまはただの張子から「あなたの願い」に変わります。</p>
       </div>
       <div class="story-grid">
@@ -1665,7 +1844,7 @@
     <div class="section-inner">
       <div class="section-head">
         <p class="eyebrow">HOW IT WORKS</p>
-        <h2>白いキャンバスから、幸運のお守りへ</h2>
+        <h2><span class="heading-line">白いキャンバスから、</span><span class="heading-line">幸運のお守りへ</span></h2>
         <p><span class="nowrap">60分</span>の体験は、この<span class="nowrap">4つ</span>のステップで進みます。道具はすべて工房にご用意しています。</p>
       </div>
       <div class="steps">
@@ -1740,6 +1919,46 @@
     </div>
   </section>
 
+  <!-- ---------- CALLIGRAPHY & DARUMA STORIES ---------- -->
+  <section class="craft-stories" id="craft-stories">
+    <div class="section-inner">
+      <article class="craft-story craft-story-calligraphy">
+        <div class="craft-story-heading">
+          <p class="eyebrow">THE ART OF SHODŌ</p>
+          <h2>書道について</h2>
+          <p class="craft-story-en" lang="en">Experience the Art of Japanese Calligraphy</p>
+          <figure class="craft-story-media">
+            <img src="書道.JPG" width="1672" height="941" loading="lazy" decoding="async" alt="和室で筆を使い日本の書道に取り組む様子">
+          </figure>
+        </div>
+        <div class="craft-story-copy">
+          <h3><span class="heading-line">日本の文化と心を、</span><span class="heading-line">筆に込める</span></h3>
+          <p>書道は、漢字の伝来とともに日本で育まれ、千年以上にわたって受け継がれてきた伝統文化です。文字を美しく表すだけではなく、書く人の心や個性を表現する日本独自の芸術として発展してきました。</p>
+          <p>体験では、願いや想いを表す漢字を選び、筆で書くことに挑戦します。一画ずつ心を込めて練習した文字を、だるまに自ら書き入れ、世界にひとつだけの作品を完成させます。日本人が大切に受け継いできた書道文化に触れながら、願いや想いを、自分だけの一文字に込めてください。</p>
+        </div>
+        <span class="craft-story-mark" aria-hidden="true">書</span>
+      </article>
+
+      <article class="craft-story craft-story-daruma">
+        <div class="craft-story-heading">
+          <p class="eyebrow">MADE IN TAKASAKI</p>
+          <h2>だるまについて</h2>
+          <p class="craft-story-en" lang="en">Handmade in Takasaki, Completed by You</p>
+          <figure class="craft-story-media">
+            <img src="ダルマについて.JPG" width="1536" height="1024" loading="lazy" decoding="async" alt="高崎の工房で職人が赤いだるまを手作りする様子">
+          </figure>
+        </div>
+        <div class="craft-story-copy">
+          <h3><span class="heading-line">だるまの</span><span class="heading-line">聖地・高崎から</span><span class="heading-line">浅草へ</span></h3>
+          <p>体験で使用するだるまは、だるまの名産地として知られる群馬県高崎市で、熟練の職人が一つひとつ丁寧に手作りしています。日本の伝統と職人の技が込められた、正真正銘のMade in Japanのだるまです。</p>
+          <p>そのだるまに目を入れ、漢字を書き入れ、最後に完成させるのはお客様自身。</p>
+          <p>高崎の職人から受け継いだだるまを、浅草で世界にひとつだけの作品へ。日本の伝統に触れながら、自分だけのだるまづくりをお楽しみください。</p>
+        </div>
+        <span class="craft-story-mark" aria-hidden="true">福</span>
+      </article>
+    </div>
+  </section>
+
   <!-- ---------- REVIEWS ---------- -->
   <section class="reviews" id="reviews">
     <div class="section-inner">
@@ -1770,7 +1989,7 @@
   <!-- ---------- CTA ---------- -->
   <section id="book" style="padding-top:0;">
     <div class="cta-band">
-      <h2 class="brush">願いを込める準備は、できましたか。</h2>
+      <h2 class="brush"><span class="heading-line">願いを込める準備は、</span><span class="heading-line">できましたか。</span></h2>
       <p><span class="nowrap">1日6組</span>限定の少人数制。浅草観光の合間に、<span class="nowrap">60分</span>だけの特別な時間を。</p>
       <a href="#" class="btn-primary">空き状況を見て予約する</a>
     </div>
@@ -1781,7 +2000,7 @@
 <div class="daruma-stage">
   <div class="daruma-img-wrap daruma-3d-wrap">
     <model-viewer id="darumaModel"
-      src="daruma_noeyes.glb"
+      src="daruma_noeyes_web.glb"
       alt="目入れを体験できる赤いだるまの3Dモデル"
       loading="eager"
       camera-controls
@@ -1808,7 +2027,7 @@
   <div class="map-embed">
     <img src="asakusa-access.jpg" width="1536" height="1024" loading="lazy" decoding="async" alt="浅草駅近くの街並みと東京スカイツリー、人力車">
     <iframe
-      src="https://www.google.com/maps?q=35.7144608,139.79375&amp;z=17&amp;output=embed"
+      src="https://www.google.com/maps?q=東京都台東区浅草2-6-14+公園六区ビル4F&amp;z=17&amp;output=embed"
       title="LUCKY DARUMA ASAKUSAの地図"
       loading="lazy"
       referrerpolicy="no-referrer-when-downgrade"
@@ -1825,7 +2044,7 @@
     <a href="#reviews">口コミ</a>
     <a href="#book">予約</a>
   </div>
-  <a class="map-link" href="https://www.google.com/maps/place/LUCKY+DARUMA+ASAKUSA/@35.7144608,139.79375,17z/data=!3m1!4b1!4m6!3m5!1s0x60188fee5832a69d:0xe306f8a553b438c3!8m2!3d35.7144608!4d139.79375!16s%2Fg%2F11zg196nx2!18m1!1e1?entry=ttu&amp;g_ep=EgoyMDI2MDcwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">Google Mapsで場所を見る</a>
+  <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=東京都台東区浅草2-6-14+公園六区ビル4F" target="_blank" rel="noopener noreferrer">Google Mapsで場所を見る</a>
   <p style="margin-top:16px;">&copy; 2026 LUCKY DARUMA ASAKUSA</p>
 </footer>
 
@@ -1871,21 +2090,21 @@
     {s:'.nav-links li:nth-child(3) a', ja:'口コミ', en:'Reviews'},
     {s:'.nav-cta', ja:'予約する', en:'Book Now'},
     {s:'.hero .eyebrow', ja:'ASAKUSA · TRADITIONAL WISH ART', en:'ASAKUSA · TRADITIONAL WISH ART'},
-    {s:'.hero h1', html:true, ja:'<span class="hero-line line-paint1">Paint</span><span class="hero-line line-your1">your</span><span class="hero-line line-daruma accent">daruma.</span><span class="hero-line line-paint2">Paint</span><span class="hero-line line-your2">your</span><span class="hero-line line-wish">wish.</span>', en:'<span class="hero-line line-paint1">Paint</span><span class="hero-line line-your1">your</span><span class="hero-line line-daruma accent">daruma.</span><span class="hero-line line-paint2">Paint</span><span class="hero-line line-your2">your</span><span class="hero-line line-wish">wish.</span>'},
+    {s:'.hero h1', html:true, ja:'<span class="hero-line line-write">Write your wish.</span><span class="hero-line line-create">Create your own</span><span class="hero-line line-daruma accent">Daruma.</span><span class="hero-line line-experience">Experience Japan.</span>', en:'<span class="hero-line line-write">Write your wish.</span><span class="hero-line line-create">Create your own</span><span class="hero-line line-daruma accent">Daruma.</span><span class="hero-line line-experience">Experience Japan.</span>'},
     {s:'.hero-jp', ja:'願いを込めて、目を入れる。', en:'Make a wish, paint in the eye.'},
     {s:'.hero-sub', html:true, ja:'浅草にある小さな工房で、書道を学び、自分だけの達磨(だるま)に絵付けをする<span class="nowrap">60分間</span>。左目に願いを込めて筆を入れ、願いが叶ったらもう一つの目をー世界にひとつだけのお守りを手のひらに。', en:'In a small workshop in Asakusa, spend <span class="nowrap">60 minutes</span> learning Japanese calligraphy and painting your own daruma. Paint the left eye while making your wish; when it comes true, complete the other eye. Take home a one-of-a-kind lucky charm made by your own hands.'},
     {s:'.hero-ctas .btn-primary', ja:'体験を予約する', en:'Book the Experience'},
     {s:'.hero-ctas .btn-ghost', ja:'コース内容を見る', en:'View the Experience'},
     {s:'.hint', html:true, ja:'浅草駅から<span class="nowrap">徒歩2分</span>・少人数制・英語対応スタッフ常駐', en:'A <span class="nowrap">2-minute walk</span> from Asakusa Station · small-group sessions · English-speaking staff on site'},
     {s:'#story .section-head .eyebrow', ja:'SINCE EDO PERIOD', en:'SINCE THE EDO PERIOD'},
-    {s:'#story .section-head h2', ja:'だるまは、ただの置物じゃない。', en:'A daruma is more than a decoration.'},
+    {s:'#story .section-head h2', html:true, ja:'<span class="heading-line">だるまは、</span><span class="heading-line">ただの置物じゃない。</span>', en:'A daruma is more than a decoration.'},
     {s:'#story .section-head p:last-child', ja:'七転び八起き——何度倒れても起き上がる姿から、江戸時代より「願掛け」の縁起物として親しまれてきました。目を入れる瞬間、だるまはただの張子から「あなたの願い」に変わります。', en:'“Fall seven times, rise eight.” Because a daruma always rights itself after being tipped over, it has been loved since the Edo period as a lucky object for setting intentions. The moment you paint in the eye, the paper figure becomes a vessel for your wish.'},
     {s:'.story-card:nth-child(1) h3', html:true, ja:'<span class="kanji-mark">起</span>七転び八起き', en:'<span class="kanji-mark">起</span>Fall seven times, rise eight'},
     {s:'.story-card:nth-child(1) p', ja:'底が重く作られただるまは、倒しても必ず起き上がります。何度失敗しても立ち上がる——その姿そのものが縁起の由来です。', en:'A daruma is weighted at the base, so it stands back up even when it is knocked over. Its form embodies resilience: the courage to rise again after every setback.'},
     {s:'.story-card:nth-child(2) h3', html:true, ja:'<span class="kanji-mark">願</span>片目から始まる物語', en:'<span class="kanji-mark">願</span>A story that begins with one eye'},
     {s:'.story-card:nth-child(2) p', ja:'まず左目に願いを込めて墨を入れ、部屋に飾ります。願いが叶った日、感謝を込めてもう片方の目を入れる——それが本来のだるまの作法です。', en:'Traditionally, you paint the left eye first while making a wish, then display the daruma. When the wish comes true, you paint the other eye with gratitude.'},
     {s:'section:nth-of-type(3) .eyebrow', ja:'HOW IT WORKS', en:'HOW IT WORKS'},
-    {s:'section:nth-of-type(3) h2', ja:'白いキャンバスから、幸運のお守りへ', en:'From blank canvas to lucky charm'},
+    {s:'section:nth-of-type(3) h2', html:true, ja:'<span class="heading-line">白いキャンバスから、</span><span class="heading-line">幸運のお守りへ</span>', en:'From blank canvas to lucky charm'},
     {s:'section:nth-of-type(3) .section-head p:last-child', html:true, ja:'<span class="nowrap">60分</span>の体験は、この<span class="nowrap">4つ</span>のステップで進みます。道具はすべて工房にご用意しています。', en:'This <span class="nowrap">60-minute</span> experience follows four simple steps. All tools and materials are prepared at the workshop.'},
     {s:'.step:nth-child(1) h4', ja:'好きな漢字を選ぶ', en:'Choose Your Kanji'},
     {s:'.step:nth-child(1) p:last-child', ja:'書きたい漢字を選びます。自分の名前、願い、大切にしている想いを表す一文字を選べます。', en:"Choose the kanji you'd like to write. It can represent your name, a wish, or a value that is meaningful to you."},
@@ -1907,15 +2126,28 @@
     {s:'.kanji-name .section-head p:last-child', ja:'あなたの名前の響きを、美しく意味のある日本の漢字に変えます。', en:"We'll transform the sound of your name into beautiful, meaningful Japanese kanji."},
     {s:'.name-before .name-label', ja:'Your Name', en:'Your Name'},
     {s:'.name-after .name-label', ja:'Your Kanji Name', en:'Your Kanji Name'},
+    {s:'.craft-story-calligraphy .eyebrow', ja:'THE ART OF SHODŌ', en:'THE ART OF SHODŌ'},
+    {s:'.craft-story-calligraphy h2', ja:'書道について', en:'About Japanese Calligraphy'},
+    {s:'.craft-story-calligraphy .craft-story-en', ja:'Experience the Art of Japanese Calligraphy', en:'Experience the Art of Japanese Calligraphy'},
+    {s:'.craft-story-calligraphy .craft-story-copy h3', html:true, ja:'<span class="heading-line">日本の文化と心を、</span><span class="heading-line">筆に込める</span>', en:'The spirit and culture of Japan in every brushstroke'},
+    {s:'.craft-story-calligraphy .craft-story-copy p:nth-of-type(1)', ja:'書道は、漢字の伝来とともに日本で育まれ、千年以上にわたって受け継がれてきた伝統文化です。文字を美しく表すだけではなく、書く人の心や個性を表現する日本独自の芸術として発展してきました。', en:'Japanese calligraphy, or shodō, took root in Japan with the arrival of kanji and has been passed down for more than a thousand years. More than simply writing beautifully, it has developed into a distinctly Japanese art form that expresses the spirit and individuality of the person holding the brush.'},
+    {s:'.craft-story-calligraphy .craft-story-copy p:nth-of-type(2)', ja:'体験では、願いや想いを表す漢字を選び、筆で書くことに挑戦します。一画ずつ心を込めて練習した文字を、だるまに自ら書き入れ、世界にひとつだけの作品を完成させます。日本人が大切に受け継いできた書道文化に触れながら、願いや想いを、自分だけの一文字に込めてください。', en:'During the experience, you will choose a kanji that reflects a wish or feeling and learn to write it with a brush. After practicing each stroke with care, you will add the character to your daruma yourself, creating a one-of-a-kind piece. As you discover a tradition cherished in Japan for generations, put your own wish or intention into a single character that is uniquely yours.'},
+    {s:'.craft-story-daruma .eyebrow', ja:'MADE IN TAKASAKI', en:'MADE IN TAKASAKI'},
+    {s:'.craft-story-daruma h2', ja:'だるまについて', en:'About the Daruma'},
+    {s:'.craft-story-daruma .craft-story-en', ja:'Handmade in Takasaki, Completed by You', en:'Handmade in Takasaki, Completed by You'},
+    {s:'.craft-story-daruma .craft-story-copy h3', html:true, ja:'<span class="heading-line">だるまの</span><span class="heading-line">聖地・高崎から</span><span class="heading-line">浅草へ</span>', en:'From Takasaki, the home of daruma, to Asakusa'},
+    {s:'.craft-story-daruma .craft-story-copy p:nth-of-type(1)', ja:'体験で使用するだるまは、だるまの名産地として知られる群馬県高崎市で、熟練の職人が一つひとつ丁寧に手作りしています。日本の伝統と職人の技が込められた、正真正銘のMade in Japanのだるまです。', en:'The daruma used in our workshop are individually handcrafted by skilled artisans in Takasaki, Gunma Prefecture, a city renowned as the home of daruma making. Each one is an authentic Made-in-Japan piece, shaped by Japanese tradition and generations of craftsmanship.'},
+    {s:'.craft-story-daruma .craft-story-copy p:nth-of-type(2)', ja:'そのだるまに目を入れ、漢字を書き入れ、最後に完成させるのはお客様自身。', en:'You are the one who paints in its eye, adds your chosen kanji, and brings it to completion.'},
+    {s:'.craft-story-daruma .craft-story-copy p:nth-of-type(3)', ja:'高崎の職人から受け継いだだるまを、浅草で世界にひとつだけの作品へ。日本の伝統に触れながら、自分だけのだるまづくりをお楽しみください。', en:'Passed from the hands of Takasaki artisans to yours in Asakusa, each daruma becomes a one-of-a-kind creation. Enjoy making your own while experiencing a living Japanese tradition.'},
     {s:'#reviews .section-head .eyebrow', ja:'VOICES', en:'VOICES'},
     {s:'#reviews .section-head h2', ja:'体験した方の声', en:'Guest Reviews'},
     {s:'.review-card:nth-child(1) p:nth-child(2)', ja:'職人さんが英語で丁寧に教えてくれて、旅の一番の思い出になりました。目を入れる瞬間は本当に特別でした。', en:'The artisan explained everything carefully in English, and it became the highlight of my trip. Painting in the eye felt truly special.'},
     {s:'.review-card:nth-child(2) p:nth-child(2)', ja:'子供と一緒に参加。難しすぎず、それでいて本格的で大満足。小さいサイズを選んだのも正解でした。', en:'I joined with my child. It was approachable but still felt authentic, and choosing the small size was perfect.'},
     {s:'.review-card:nth-child(3) p:nth-child(2)', ja:'名前を漢字にしてもらう体験がとても素敵で、額に入れて部屋に飾っています。浅草観光の合間に立ち寄る価値あり。', en:'Having my name written in kanji was wonderful. I framed it and display it at home. It is absolutely worth fitting into an Asakusa visit.'},
-    {s:'.cta-band h2', ja:'願いを込める準備は、できましたか。', en:'Ready to put your wish into form?'},
+    {s:'.cta-band h2', html:true, ja:'<span class="heading-line">願いを込める準備は、</span><span class="heading-line">できましたか。</span>', en:'Ready to put your wish into form?'},
     {s:'.cta-band p', html:true, ja:'<span class="nowrap">1日6組</span>限定の少人数制。浅草観光の合間に、<span class="nowrap">60分</span>だけの特別な時間を。', en:'Limited to <span class="nowrap">six groups per day</span>. Add a meaningful <span class="nowrap">60-minute</span> craft experience to your Asakusa visit.'},
     {s:'.cta-band .btn-primary', ja:'空き状況を見て予約する', en:'Check Availability and Book'},
-    {s:'footer > p:first-of-type', html:true, ja:'<span class="nowrap">〒111-0032</span> 東京都台東区浅草2-6-14<br>公園六区ビル 4F<br>(浅草駅より<span class="nowrap">徒歩2分</span>)', en:'The Room Asakusa 4F, 1-16-11 Asakusa<br>Taito City, Tokyo 111-0032<br>(<span class="nowrap">2-minute walk</span> from Asakusa Station)'},
+    {s:'footer > p:first-of-type', html:true, ja:'<span class="nowrap">〒111-0032</span> 東京都台東区浅草2-6-14<br>公園六区ビル 4F<br>(浅草駅より<span class="nowrap">徒歩2分</span>)', en:'Koen Rokku Building 4F, 2-6-14 Asakusa<br>Taito City, Tokyo 111-0032<br>(<span class="nowrap">2-minute walk</span> from Asakusa Station)'},
     {s:'.foot-links a:nth-child(1)', ja:'体験メニュー', en:'Experiences'},
     {s:'.foot-links a:nth-child(2)', ja:'だるまの由来', en:'Daruma Story'},
     {s:'.foot-links a:nth-child(3)', ja:'口コミ', en:'Reviews'},
@@ -1930,6 +2162,8 @@
     {s:'#eyeRight', attr:'aria-label', ja:'だるま自身の右目を開眼する（画面左側）', en:"Open the daruma's right eye (left side of the screen)"},
     {s:'.exp-visual', attr:'alt', ja:'浅草で書道を学び、自分だけのだるまに絵付けを楽しむ参加者', en:'Guests at an Asakusa calligraphy workshop painting their own lucky daruma'},
     {s:'.map-embed img', attr:'alt', ja:'浅草駅近くの街並みと東京スカイツリー、人力車', en:'Asakusa street near the station with Tokyo Skytree and a traditional rickshaw'},
+    {s:'.craft-story-calligraphy .craft-story-media img', attr:'alt', ja:'和室で筆を使い日本の書道に取り組む様子', en:'A calligrapher practicing Japanese shodō with brush and ink in a traditional tatami room'},
+    {s:'.craft-story-daruma .craft-story-media img', attr:'alt', ja:'高崎の工房で職人が赤いだるまを手作りする様子', en:'A Takasaki artisan hand-painting a traditional red daruma in his workshop'},
     {s:'.map-embed iframe', attr:'title', ja:'LUCKY DARUMA ASAKUSAの地図', en:'Map of LUCKY DARUMA ASAKUSA'}
   ];
 
@@ -2041,9 +2275,9 @@
 (function(){
   var state = 'noeyes';
   var models = {
-    noeyes: 'daruma_noeyes.glb',
-    left: 'daruma_left.glb',
-    both: 'daruma_both.glb'
+    noeyes: 'daruma_noeyes_web.glb',
+    left: 'daruma_left_web.glb',
+    both: 'daruma_both_web.glb'
   };
   var model = document.getElementById('darumaModel');
   var eyeLeft = document.getElementById('eyeLeft');
