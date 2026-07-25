@@ -510,6 +510,15 @@
     -webkit-text-stroke:1.5px var(--red);
     line-height:1;
   }
+  .step-photo{
+    display:block;
+    width:min(100%, 220px);
+    aspect-ratio:3/2;
+    margin-top:24px;
+    object-fit:cover;
+    object-position:center;
+    border:1px solid rgba(28,26,23,.12);
+  }
   .step h4{
     margin-top:14px;
     font-size:1rem;
@@ -1000,7 +1009,7 @@
   .step:first-child{border-left:1px solid #b9b0a1;}
   .step::after{height:3px;background:var(--red)!important;transform:scaleX(1);}
   .step-num{color:transparent;-webkit-text-stroke:1px var(--red);font-size:3.5rem;font-weight:600;}
-  .step h4{margin-top:70px;font-family:'Shippori Mincho',serif;font-size:1.2rem;}
+  .step h4{margin-top:24px;font-family:'Shippori Mincho',serif;font-size:1.2rem;}
   .step p{
     color:#655e53;
     font-size:clamp(.98rem,1.1vw,1.08rem);
@@ -1874,21 +1883,25 @@
       <div class="steps">
         <div class="step">
           <p class="step-num">01</p>
+          <img class="step-photo" src="images/steps/step-01-choose-kanji.jpg" alt="願いや想いを表す漢字を選ぶ様子" loading="lazy" decoding="async">
           <h4>好きな漢字を選ぶ</h4>
           <p>書きたい漢字を選びます。自分の名前、願い、大切にしている想いを表す一文字を選べます。</p>
         </div>
         <div class="step">
           <p class="step-num">02</p>
+          <img class="step-photo" src="images/steps/step-02-calligraphy.jpg" alt="筆で選んだ漢字を書く練習" loading="lazy" decoding="async">
           <h4>日本の書道を練習</h4>
           <p>書道の基本を学び、選んだ漢字を書く練習をします。</p>
         </div>
         <div class="step">
           <p class="step-num">03</p>
+          <img class="step-photo" src="images/steps/step-03-paint-daruma.jpg" alt="だるまに願いを込めて片目を入れる様子" loading="lazy" decoding="async">
           <h4>達磨に絵付け</h4>
           <p>達磨に選んだ漢字を書き、願いの始まりとして最初の目を入れます。</p>
         </div>
         <div class="step">
           <p class="step-num">04</p>
+          <img class="step-photo" src="images/steps/step-04-take-home.jpg" alt="完成して持ち帰る色とりどりのだるま" loading="lazy" decoding="async">
           <h4>達磨を持ち帰る</h4>
           <p>幸運のお守りとして達磨を持ち帰り、願いが叶ったらもう一つの目を入れます。</p>
         </div>
@@ -2137,12 +2150,16 @@
     {s:'section:nth-of-type(3) h2', html:true, ja:'<span class="heading-line">置物から、</span><span class="heading-line">幸運のお守りへ</span>', en:'From ornament to lucky charm'},
     {s:'section:nth-of-type(3) .section-head p:last-child', html:true, ja:'<span class="nowrap">60分</span>の体験は、この<span class="nowrap">4つ</span>のステップで進みます。道具はすべて工房にご用意しています。', en:'This <span class="nowrap">60-minute</span> experience follows four simple steps. All tools and materials are prepared at the workshop.'},
     {s:'.step:nth-child(1) h4', ja:'好きな漢字を選ぶ', en:'Choose Your Kanji'},
+    {s:'.step:nth-child(1) .step-photo', attr:'alt', ja:'願いや想いを表す漢字を選ぶ様子', en:'Choosing a kanji that represents a wish or meaningful intention'},
     {s:'.step:nth-child(1) p:last-child', ja:'書きたい漢字を選びます。自分の名前、願い、大切にしている想いを表す一文字を選べます。', en:"Choose the kanji you'd like to write. It can represent your name, a wish, or a value that is meaningful to you."},
     {s:'.step:nth-child(2) h4', ja:'日本の書道を練習', en:'Practice Japanese Calligraphy'},
+    {s:'.step:nth-child(2) .step-photo', attr:'alt', ja:'筆で選んだ漢字を書く練習', en:'Practicing a chosen kanji with a calligraphy brush'},
     {s:'.step:nth-child(2) p:last-child', ja:'書道の基本を学び、選んだ漢字を書く練習をします。', en:'Learn the basics of Japanese calligraphy, then practice writing your chosen kanji.'},
     {s:'.step:nth-child(3) h4', ja:'達磨に絵付け', en:'Paint Your Daruma'},
+    {s:'.step:nth-child(3) .step-photo', attr:'alt', ja:'だるまに願いを込めて片目を入れる様子', en:'Painting one eye on a daruma while making a wish'},
     {s:'.step:nth-child(3) p:last-child', ja:'達磨に選んだ漢字を書き、願いの始まりとして最初の目を入れます。', en:'Write the kanji on a daruma and paint its first eye to begin your wish.'},
     {s:'.step:nth-child(4) h4', ja:'達磨を持ち帰る', en:'Take Your Daruma Home'},
+    {s:'.step:nth-child(4) .step-photo', attr:'alt', ja:'完成して持ち帰る色とりどりのだるま', en:'Colorful finished daruma ready to take home'},
     {s:'.step:nth-child(4) p:last-child', ja:'幸運のお守りとして達磨を持ち帰り、願いが叶ったらもう一つの目を入れます。', en:'Take your daruma home as a symbol of good luck. Paint the second eye when your wish comes true.'},
     {s:'#experiences .section-head .eyebrow', ja:'THE EXPERIENCE', en:'THE EXPERIENCE'},
     {s:'#experiences .section-head h2', html:true, ja:'<span class="heading-line">書道とだるま</span><span class="heading-line">絵付け体験</span>', en:'Calligraphy & Daruma Painting'},
