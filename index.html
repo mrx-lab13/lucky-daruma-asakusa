@@ -1122,15 +1122,21 @@
   .name-arrow{color:var(--white);}
   .reviews{background:var(--paper-dark);}
   .review-grid{
-    grid-template-columns:repeat(3,minmax(0,1fr));
+    grid-template-columns:repeat(2,minmax(0,1fr));
     gap:0;
     border:1px solid #aca292;
   }
   .review-card{
-    padding:38px 32px 24px;background:transparent;border:0;border-radius:0;border-right:1px solid #aca292;
+    padding:38px 32px 24px;
+    background:transparent;
+    border:0;
+    border-radius:0;
+    border-right:1px solid #aca292;
+    border-bottom:1px solid #aca292;
   }
   .review-card:first-child{border-left:0;}
-  .review-card:last-child{border-right:0;}
+  .review-card:nth-child(even){border-right:0;}
+  .review-card:nth-last-child(-n+2){border-bottom:0;}
   .review-stars{color:var(--red);}
   .review-name{color:var(--red);}
   #book{padding:100px 5vw;background:var(--ink)!important;}
@@ -1217,7 +1223,7 @@
     .hero>div:first-child{z-index:3;}
     .steps{grid-template-columns:1fr 1fr;}
     .step:nth-child(3){border-left:1px solid #b9b0a1;}
-    .review-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
+    .review-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
   }
   @media (max-width:640px){
     .nav{padding:14px 18px;}
@@ -1249,6 +1255,7 @@
       border-right:0;
       border-bottom:1px solid #aca292;
     }
+    .review-card:nth-last-child(-n+2){border-bottom:1px solid #aca292;}
     .review-card:last-child{border-bottom:0;}
     .cta-band{padding:58px 28px 190px;background:linear-gradient(160deg,#a91611 0 78%,#d6aa5f 78%);}
     .cta-band::after{right:22px;top:auto;bottom:-45px;transform:none;font-size:10rem;}
@@ -2017,18 +2024,23 @@
       <div class="review-grid">
         <div class="review-card">
           <p class="review-stars">★★★★★</p>
-          <p>職人さんが英語で丁寧に教えてくれて、旅の一番の思い出になりました。目を入れる瞬間は本当に特別でした。</p>
+          <p>英語で丁寧に教えてもらえたので、初めての書道でも安心して楽しめました。願いを込めて目を入れる瞬間が、旅の中でも特に心に残っています。</p>
           <p class="review-name">— Sarah T. / Australia</p>
         </div>
         <div class="review-card">
           <p class="review-stars">★★★★★</p>
-          <p>子供と一緒に参加。難しすぎず、それでいて本格的で大満足。小さいサイズを選んだのも正解でした。</p>
-          <p class="review-name">— 佐藤家 / 大阪</p>
+          <p>子どもと一緒に日本文化を体験できる、とても良いアクティビティでした。スタッフのサポートも温かく、家族みんなで楽しい時間を過ごせました。</p>
+          <p class="review-name">— Michael R. / USA</p>
         </div>
         <div class="review-card">
           <p class="review-stars">★★★★★</p>
-          <p>名前を漢字にしてもらう体験がとても素敵で、額に入れて部屋に飾っています。浅草観光の合間に立ち寄る価値あり。</p>
-          <p class="review-name">— Julien M. / France</p>
+          <p>自分の名前や願いに合う漢字を選び、筆で書く時間がとても新鮮でした。浅草で日本の伝統にじっくり触れられる、忘れられない体験です。</p>
+          <p class="review-name">— Emma L. / United Kingdom</p>
+        </div>
+        <div class="review-card">
+          <p class="review-stars">★★★★★</p>
+          <p>書道からだるまの絵付けまで、一つひとつの工程に意味があることを知りました。自分で完成させただるまは、旅の思い出が詰まった特別なお守りです。</p>
+          <p class="review-name">— Lucas M. / Brazil</p>
         </div>
       </div>
     </div>
@@ -2199,9 +2211,10 @@
     {s:'.craft-story-daruma .craft-story-copy p:nth-of-type(3)', ja:'高崎の職人から受け継いだだるまを、浅草で世界にひとつだけの作品へ。日本の伝統に触れながら、自分だけのだるまづくりをお楽しみください。', en:'Passed from the hands of Takasaki artisans to yours in Asakusa, each daruma becomes a one-of-a-kind creation. Enjoy making your own while experiencing a living Japanese tradition.'},
     {s:'#reviews .section-head .eyebrow', ja:'VOICES', en:'VOICES'},
     {s:'#reviews .section-head h2', ja:'体験した方の声', en:'Guest Reviews'},
-    {s:'.review-card:nth-child(1) p:nth-child(2)', ja:'職人さんが英語で丁寧に教えてくれて、旅の一番の思い出になりました。目を入れる瞬間は本当に特別でした。', en:'The artisan explained everything carefully in English, and it became the highlight of my trip. Painting in the eye felt truly special.'},
-    {s:'.review-card:nth-child(2) p:nth-child(2)', ja:'子供と一緒に参加。難しすぎず、それでいて本格的で大満足。小さいサイズを選んだのも正解でした。', en:'I joined with my child. It was approachable but still felt authentic, and choosing the small size was perfect.'},
-    {s:'.review-card:nth-child(3) p:nth-child(2)', ja:'名前を漢字にしてもらう体験がとても素敵で、額に入れて部屋に飾っています。浅草観光の合間に立ち寄る価値あり。', en:'Having my name written in kanji was wonderful. I framed it and display it at home. It is absolutely worth fitting into an Asakusa visit.'},
+    {s:'.review-card:nth-child(1) p:nth-child(2)', ja:'英語で丁寧に教えてもらえたので、初めての書道でも安心して楽しめました。願いを込めて目を入れる瞬間が、旅の中でも特に心に残っています。', en:'The instructions in English made my first calligraphy experience easy and enjoyable. Painting in the eye while making a wish was one of the most memorable moments of my trip.'},
+    {s:'.review-card:nth-child(2) p:nth-child(2)', ja:'子どもと一緒に日本文化を体験できる、とても良いアクティビティでした。スタッフのサポートも温かく、家族みんなで楽しい時間を過ごせました。', en:'This was a wonderful way to experience Japanese culture with our children. The staff were warm and supportive, and the whole family had a fantastic time.'},
+    {s:'.review-card:nth-child(3) p:nth-child(2)', ja:'自分の名前や願いに合う漢字を選び、筆で書く時間がとても新鮮でした。浅草で日本の伝統にじっくり触れられる、忘れられない体験です。', en:'Choosing a kanji that reflected my name and wish, then writing it with a brush, felt completely new to me. It was an unforgettable opportunity to connect with Japanese tradition in Asakusa.'},
+    {s:'.review-card:nth-child(4) p:nth-child(2)', ja:'書道からだるまの絵付けまで、一つひとつの工程に意味があることを知りました。自分で完成させただるまは、旅の思い出が詰まった特別なお守りです。', en:'I loved learning the meaning behind every step, from calligraphy to painting the daruma. The daruma I completed myself is a special keepsake filled with memories of my trip.'},
     {s:'.cta-band h2', html:true, ja:'<span class="heading-line">浅草での思い出を、</span><span class="heading-line">願いのこもった一生ものに</span>', en:'Turn Your Asakusa Memories into a Keepsake Filled with Wishes'},
     {s:'.cta-band p', html:true, ja:'日本の伝統に触れながら、自分の名前や願いを込めた、世界にひとつだけのだるまを作る特別な時間。旅の記憶とこれから叶えたい想いを、手のひらサイズの<span class="nowrap">お守りとして</span>お持ち帰りください。', en:'Experience a living Japanese tradition as you create a one-of-a-kind daruma bearing your name and wish. Take home a palm-sized lucky charm that holds both the memories of your journey and the hopes you carry into the future.'},
     {s:'.cta-band .btn-primary', ja:'空き状況を見て予約する', en:'Check Availability and Book'},
