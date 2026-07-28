@@ -1121,11 +1121,16 @@
   .name-value.kanji{color:var(--gold);font-size:3.5rem;}
   .name-arrow{color:var(--white);}
   .reviews{background:var(--paper-dark);}
-  .review-grid{gap:0;border-top:1px solid #aca292;}
+  .review-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:0;
+    border:1px solid #aca292;
+  }
   .review-card{
     padding:38px 32px 24px;background:transparent;border:0;border-radius:0;border-right:1px solid #aca292;
   }
-  .review-card:first-child{border-left:1px solid #aca292;}
+  .review-card:first-child{border-left:0;}
+  .review-card:last-child{border-right:0;}
   .review-stars{color:var(--red);}
   .review-name{color:var(--red);}
   #book{padding:100px 5vw;background:var(--ink)!important;}
@@ -1212,6 +1217,7 @@
     .hero>div:first-child{z-index:3;}
     .steps{grid-template-columns:1fr 1fr;}
     .step:nth-child(3){border-left:1px solid #b9b0a1;}
+    .review-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
   }
   @media (max-width:640px){
     .nav{padding:14px 18px;}
@@ -1238,7 +1244,12 @@
     .exp-card{min-height:440px;padding:32px 26px;}
     .exp-tag{left:26px;top:28px;}
     .review-grid{grid-template-columns:1fr;}
-    .review-card,.review-card:first-child{border-left:1px solid #aca292;border-bottom:1px solid #aca292;}
+    .review-card,.review-card:first-child{
+      border-left:0;
+      border-right:0;
+      border-bottom:1px solid #aca292;
+    }
+    .review-card:last-child{border-bottom:0;}
     .cta-band{padding:58px 28px 190px;background:linear-gradient(160deg,#a91611 0 78%,#d6aa5f 78%);}
     .cta-band::after{right:22px;top:auto;bottom:-45px;transform:none;font-size:10rem;}
   }
