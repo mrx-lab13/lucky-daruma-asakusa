@@ -2002,7 +2002,7 @@
     </ul>
     <div class="nav-right">
       <button class="lang-toggle" id="langToggle" type="button" aria-label="日本語表示に切り替える">JP</button>
-      <a href="https://e.japanticket.com/shops/7532" class="nav-cta" target="_blank" rel="noopener noreferrer">Book Now</a>
+      <a href="https://e.japanticket.com/shops/7532" class="nav-cta" target="_blank" rel="noopener noreferrer" data-google-ads-conversion="booking-outbound">Book Now</a>
       <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
@@ -2021,7 +2021,7 @@
       <p class="hero-jp brush">Make a wish, paint in the eye.</p>
       <p class="hero-sub">Spend <span class="nowrap">60 minutes</span> in a small workshop in Asakusa and experience two Japanese traditions: calligraphy and daruma painting. Choose a kanji that represents your name or wish, practice writing it with a brush, and paint it onto a handcrafted daruma. Add one eye as you make your wish, then take home a one-of-a-kind lucky charm created by you.</p>
       <div class="hero-ctas">
-        <a href="https://e.japanticket.com/shops/7532" class="btn-primary" target="_blank" rel="noopener noreferrer">Check Availability &amp; Book</a>
+        <a href="https://e.japanticket.com/shops/7532" class="btn-primary" target="_blank" rel="noopener noreferrer" data-google-ads-conversion="booking-outbound">Check Availability &amp; Book</a>
         <a href="#experiences" class="btn-ghost">View the Experience</a>
       </div>
       <p class="hint">Located in Asakusa, Tokyo · a hands-on cultural attraction · same-day take-home</p>
@@ -2123,7 +2123,7 @@
           <p>A special Japanese cultural experience where your travel memories and wishes come together in a one-of-a-kind lucky charm. This hands-on activity is a memorable cultural attraction for visitors looking for a unique thing to do in Asakusa.</p>
           <div class="exp-card-footer">
             <p class="exp-price">¥7,700<span class="nowrap"> / 60 min · per person</span></p>
-            <a class="exp-book-btn" href="https://e.japanticket.com/shops/7532" target="_blank" rel="noopener noreferrer">Check Availability &amp; Book</a>
+            <a class="exp-book-btn" href="https://e.japanticket.com/shops/7532" target="_blank" rel="noopener noreferrer" data-google-ads-conversion="booking-outbound">Check Availability &amp; Book</a>
           </div>
         </div>
       </div>
@@ -2276,7 +2276,7 @@
     <div class="cta-band">
       <h2 class="brush">Turn Your Asakusa Memories into a Keepsake Filled with Wishes</h2>
       <p>Experience a living Japanese tradition as you create a one-of-a-kind daruma bearing your name and wish. Take home a lucky charm that holds both the memories of your journey and the hopes you carry into the future.</p>
-      <a href="https://e.japanticket.com/shops/7532" class="btn-primary" target="_blank" rel="noopener noreferrer">Check Availability &amp; Book</a>
+      <a href="https://e.japanticket.com/shops/7532" class="btn-primary" target="_blank" rel="noopener noreferrer" data-google-ads-conversion="booking-outbound">Check Availability &amp; Book</a>
     </div>
   </section>
 
@@ -2327,13 +2327,30 @@
     <a href="#experiences">Experience</a>
     <a href="#story">Daruma Story</a>
     <a href="#reviews">Reviews</a>
-    <a href="https://e.japanticket.com/shops/7532" target="_blank" rel="noopener noreferrer">Book</a>
+    <a href="https://e.japanticket.com/shops/7532" target="_blank" rel="noopener noreferrer" data-google-ads-conversion="booking-outbound">Book</a>
   </div>
   <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=LUCKY%20DARUMA%20ASAKUSA" target="_blank" rel="noopener noreferrer">View Location on Google Maps</a>
   <p style="margin-top:16px;">&copy; 2026 LUCKY DARUMA ASAKUSA</p>
 </footer>
 
 <script>
+(function(){
+  document.addEventListener('click', function(event){
+    var clickedElement = event.target;
+    var bookingLink = clickedElement && clickedElement.closest
+      ? clickedElement.closest('[data-google-ads-conversion="booking-outbound"]')
+      : null;
+
+    if(!bookingLink || typeof gtag !== 'function') return;
+
+    gtag('event', 'conversion', {
+      send_to: 'AW-18382699247/_dM-COrHyOQcEO_1xr1E',
+      value: 1.0,
+      currency: 'JPY'
+    });
+  });
+})();
+
 (function(){
   var header = document.querySelector('header');
   function syncHeader(){
